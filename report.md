@@ -14,8 +14,11 @@ code: 41
 **total cells: 154**
 ## Kernel Checks: 
 
-Python versions match :white_check_mark:
+> [!CAUTION]
+ > Error: Python versions don't match. The notebook is using **python-3.12.7**, when **python-3.10** is required.
 
+> [!TIP]
+ > Try changing **runtime.txt** to resolve the error above.
 
 ### Citations Not Found
 
@@ -23,7 +26,7 @@ Python versions match :white_check_mark:
 ### Check Output Sizes and Rules
 - Output cell 5 size: 2164.20 KB
 > First words of input cell: from IPython.display import Image, display
-- Table found in output of cell 26
+- Table found in output of cell 32
 > First words of input cell: excerpt_df = (doc_df .drop_duplicates(subset='id') .set_index('id',
 - Audio found in output of cell 40
 > First words of input cell: from IPython.display import Audio Audio('media/RAC8300168201.mp3')
@@ -33,14 +36,14 @@ Python versions match :white_check_mark:
 > First words of input cell: pd.read_csv('.script/data/transcript_errors.csv', index_col=0).join(doc_df.set_index('id')[['publication_date','channel']])
 - Output cell 83 size: 4556.21 KB
 > First words of input cell: p2=78 barchart_78 = model_78.visualize_barchart(title=f'Salient words
-- Output cell 83 size: 4600.08 KB
+- Output cell 83 size: 4601.63 KB
 > First words of input cell: p2=78 barchart_78 = model_78.visualize_barchart(title=f'Salient words
-- Output cell 87 size: 4612.27 KB
+- Output cell 87 size: 4614.55 KB
 > First words of input cell: p2=48 barchart_48 = model_48.visualize_barchart(title=f'Salient words
 - Output cell 104 size: 4623.51 KB
 > First words of input cell: import numpy as np import
 
-Total output size: 24493.01 KB
+Total output size: 24635.36 KB
 Total number of images: 6
 Total number of tables: 2
 Total number of audios: 2
@@ -66,7 +69,7 @@ Total number of audios: 2
 | Tag | Cell | Remark |
 | --- | --- | --- |
 | image/png | 5 | Correct tagging |
-| text/html | 26 | Correct tagging (table) |
+| text/html | 32 | Correct tagging (table) |
 | text/html | 40 | Correct tagging (audio) |
 | text/html | 44 | Correct tagging (table) |
 | text/plain | 52 | Should be replaced |
@@ -98,11 +101,11 @@ Total number of audios: 2
 - Cell 22 - Encountered an end tag: a
 - Cell 22 - Encountered a start tag: a
 - Cell 22 - Encountered an end tag: a
-- Cell 25 - Encountered a start tag: img
-- Cell 25 - Encountered a start tag: a
-- Cell 25 - Encountered an end tag: a
-- Cell 30 - Encountered a start tag: a
-- Cell 30 - Encountered an end tag: a
+- Cell 26 - Encountered a start tag: a
+- Cell 26 - Encountered an end tag: a
+- Cell 31 - Encountered a start tag: img
+- Cell 31 - Encountered a start tag: a
+- Cell 31 - Encountered an end tag: a
 - Cell 33 - Encountered a start tag: br
 - Cell 35 - Encountered a start tag: a
 - Cell 35 - Encountered an end tag: a
@@ -356,9 +359,9 @@ Total number of audios: 2
 ### Check JavaScript
 **WARNING: 3 output cells contain JavaScript code.**
 
--  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZhLWxlemVyJTJGamRoX2hpc3RvcnlfYWklMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=83)
--  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZhLWxlemVyJTJGamRoX2hpc3RvcnlfYWklMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=87)
--  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZhLWxlemVyJTJGamRoX2hpc3RvcnlfYWklMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=104)
+-  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZqZGgtb2JzZXJ2ZXIlMkZpTXZ6ZlplQ1J4Y0YlMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=83)
+-  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZqZGgtb2JzZXJ2ZXIlMkZpTXZ6ZlplQ1J4Y0YlMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=87)
+-  [Check here ](https://journalofdigitalhistory.org/en/notebook-viewer/JTJGcHJveHktZ2l0aHVidXNlcmNvbnRlbnQlMkZqZGgtb2JzZXJ2ZXIlMkZpTXZ6ZlplQ1J4Y0YlMkZtYWluJTJGYXJ0aWNsZS5pcHluYg==?idx=104)
 ### Check JavaScript (plotly)
 
 **\* plotly.js** is present
@@ -377,8 +380,8 @@ Total number of audios: 2
 - Cell 11: Tags: ['abstract']
 - Cell 12: Tags: ['abstract']
 - Cell 13: Tags: ['abstract']
-- Cell 23: Tags: ['hermeneutics']
-- Cell 26: Tags: ['narrative', 'table-corpus-*', 'data-table']
+- Cell 29: Tags: ['hermeneutics']
+- Cell 32: Tags: ['table-corpuspreview-*', 'data-table']
 - Cell 33: Tags: ['figure-corpusbarplot-*']
 - Cell 39: Tags: ['hermeneutics']
 - Cell 40: Tags: ['sound-whisperexample-*']
