@@ -1,10 +1,10 @@
-jupyterlab-citation-manager==1.0.0
+#jupyterlab-citation-manager==1.0.0
 bertopic==0.17.0
 cuml-cu12==25.2.1
 gensim==4.3.3
 ipython==8.34.0
 ipywidgets==8.1.5
-lab_pytools==0.0.0
+#lab_pytools==0.0.0
 langchain==0.3.21
 langchain-community==0.3.20
 langchain-core==0.3.46
