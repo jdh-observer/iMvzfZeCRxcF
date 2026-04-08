@@ -1021,7 +1021,7 @@ model_78.update_topics(
 The barcharts below describe the top 10 words for each topic, ranked by C-TF-IDF (specificity) score.
 <!-- #endregion -->
 
-```python editable=true jdh={"object": {"source": ["Topics and top 10 words for each of the 19 topics in Bertopic model V78, ranked by C-TF-IDF"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"] jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}}
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"]
 p2=78
 barchart_78 = model_78.visualize_barchart(title=f'Salient words per topic <br>'+
                                             f'<span style="font-size: 12pt;">V78 / {len(model_78.get_topics().keys())} topics </span>',
