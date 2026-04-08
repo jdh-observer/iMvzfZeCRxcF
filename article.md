@@ -294,7 +294,7 @@ Audio('media/RAC8300168201.mp3')
 |  C'est la victoire de l'humanité ! C'est la victoire de l'humanité ! | &nbsp; |
 <!-- #endregion -->
 
-```python tags=["video-jt1-*"] jdh={"module": "object", "object": {"source": ["TO ADD"]}}
+```python tags=["video-jt1-*"] jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}}
 HTML(""" <iframe
      allow="autoplay"
      title="Vidéo INA"
@@ -724,7 +724,7 @@ pd.DataFrame(results).to_csv('./script/data/evaluation.csv')
 The next figure illustrates how evaluation guides our choice of the "optimal" value for $K$ : the intersection between lines representing Coherence and Diversity (after min-max normalization) represent the best compromise between coherence and diversity.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["figure-evaluation-*"] jdh={"module": "object", "object": {"source": ["TO ADD"]}}
+```python editable=true slideshow={"slide_type": ""} tags=["figure-evaluation-*"] jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}}
 import numpy as np
 import pandas as pd
 
@@ -1720,7 +1720,7 @@ More broadly, the study clarifies both the prospects and risks of AI in historic
 
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"]-->
 ## Bibliography
 <!-- #endregion -->
 
