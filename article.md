@@ -1051,7 +1051,7 @@ Unlike a common approach, we do not interpret the assignment of a large number o
 Some irrelevant themes are indeed assigned a cluster, as evidenced by topic `#20` in the model below (advertisements appearing in some of the material).
 <!-- #endregion -->
 
-```python editable=true jdh={"object": {"source": ["Topics and top 10 words for each of the 28 topics in Bertopic model V48, ranked by C-TF-IDF"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart48HTML-*"] 
+```python editable=true jdh={"object": {"source": ["Topics and top 10 words for each of the 28 topics in Bertopic model V48, ranked by C-TF-IDF"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart48HTML-*"]
 p2=48
 
 barchart_48 = model_48.visualize_barchart(title=f'Salient words per topic <br>'+
@@ -1720,11 +1720,11 @@ More broadly, the study clarifies both the prospects and risks of AI in historic
 
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"]-->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Bibliography
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"]-->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 <!-- BIBLIOGRAPHY START -->
 <div class="csl-bib-body">
   <div class="csl-entry"><i id="zotero|10163145/UXQWLN6C"></i>Bain, Max, Jaesung Huh, Tengda Han, and Andrew Zisserman. 2023. “WhisperX: Time-Accurate Speech Transcription of Long-Form Audio.” arXiv. <a href="https://doi.org/10.48550/arXiv.2303.00747">https://doi.org/10.48550/arXiv.2303.00747</a>.</div>
