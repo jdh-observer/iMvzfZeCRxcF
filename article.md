@@ -1720,7 +1720,7 @@ More broadly, the study clarifies both the prospects and risks of AI in historic
 
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"]-->
+<!-- #region editable=true slideshow={"slide_type": ""} -->
 ## Bibliography
 <!-- #endregion -->
 
