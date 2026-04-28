@@ -1,6 +1,7 @@
 ---
 jupyter:
   jupytext:
+    formats: ipynb,md
     text_representation:
       extension: .md
       format_name: markdown
@@ -204,7 +205,7 @@ def url_formatter(url):
     return f'<a href="{url}" target="_blank" rel="noopener noreferrer">{url}</a>'
 ```
 
-```python tags=["table-corpuspreview-*", "data-table"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["table-corpuspreview-*", "data-table"]
 excerpt_df = (doc_df
 .drop_duplicates(subset='id')
 .set_index('id', drop=False)
@@ -224,7 +225,7 @@ HTML(excerpt_df[['thumbnail_public_url','corpus','id','publication_date','title'
 )
 ```
 
-```python editable=true slideshow={"slide_type": ""} tags=["figure-corpusbarplot-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-corpusbarplot-*"]
 import plotly.express as px
 
 gp = doc_df.groupby([doc_df.publication_date.dt.year, 'corpus'])
@@ -293,7 +294,7 @@ Audio('media/RAC8300168201.mp3')
 |  C'est la victoire de l'humanité ! C'est la victoire de l'humanité ! | &nbsp; |
 <!-- #endregion -->
 
-```python tags=["video-jt1-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["video-jt1-*"]
 HTML(""" <iframe
      allow="autoplay"
      title="Vidéo INA"
@@ -307,7 +308,7 @@ HTML(""" <iframe
 Whisper's average word error rate (WER) is measured at around 6.59% for the French language (<cite id="uoa9v"><a href="#zotero%7C10163145%2FEUF5F7AZ">(Srivastav et al. 2025)</a></cite>), and concern primarily removal of hesitations or short interruptions, as well as erroneous transcription of proper nouns, such as names and surnames. In the latter case, we observed, that the model exhibits error bias favoring European surnames and is more prone to error on names of Arabic descent. We did not attempt to measure this bias, but as an example, we found more than 25 erroneous transcription variants of the name Toumi Djaïdja (see table below where we keep track of those errors) and none for Christian Delorme. The provided dataset received a regex-based correction for the name Toumi Djaïdja, as well as variants of the term Minguettes (primarily to facilitate manual search), but we left an unknown number of other names untouched.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["table-whispererrors-*", "data-table"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["table-whispererrors-*", "data-table"]
 pd.read_csv('.script/data/transcript_errors.csv', index_col=0).join(doc_df.set_index('id')[['publication_date','channel']])
 ```
 
@@ -723,7 +724,7 @@ pd.DataFrame(results).to_csv('./script/data/evaluation.csv')
 The next figure illustrates how evaluation guides our choice of the "optimal" value for $K$ : the intersection between lines representing Coherence and Diversity (after min-max normalization) represent the best compromise between coherence and diversity.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["figure-evaluation-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-evaluation-*"]
 import numpy as np
 import pandas as pd
 
@@ -1020,7 +1021,7 @@ model_78.update_topics(
 The barcharts below describe the top 10 words for each topic, ranked by C-TF-IDF (specificity) score.
 <!-- #endregion -->
 
-```python editable=true jdh={"object": {"source": ["Topics and top 10 words for each of the 19 topics in Bertopic model V78, ranked by C-TF-IDF"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"]
 p2=78
 barchart_78 = model_78.visualize_barchart(title=f'Salient words per topic <br>'+
                                             f'<span style="font-size: 12pt;">V78 / {len(model_78.get_topics().keys())} topics </span>',
@@ -1034,7 +1035,7 @@ barchart_78.write_image(f'./figs/topics_barchart_V{p2}.png')
 barchart_78.show()
 ```
 
-```python tags=["figure-topicbarchart78PNG-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicbarchart78PNG-*"]
 # Fallback to the png version in case HTML fails to display
 display(Image('./figs/topics_barchart_V78.png'))
 ```
@@ -1065,7 +1066,7 @@ barchart_48.write_image(f'./figs/topics_barchart_V{p2}.png', include_plotlyjs="c
 barchart_48.show()
 ```
 
-```python tags=["figure-topicbarchart48PNG-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicbarchart48PNG-*"]
 # Fallback to the png version in case HTML fails to display
 display(Image('./figs/topics_barchart_V48.png'))
 ```
@@ -1118,7 +1119,7 @@ print('re-running umap reduction model...')
 reduced_embeddings = UMAP(n_neighbors=p0, n_components=2, min_dist=0.0, metric='cosine', random_state=42).fit_transform(embeddings)
 ```
 
-```python tags=["figure-topicsmap78HTML-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsmap78HTML-*"]
 from script.utils import get_fig_safe
 
 # generate map for model 48
@@ -1140,7 +1141,7 @@ map78_light = model_78.visualize_documents(title=title, docs=docs_tooltip, topic
 map78_light.show()
 ```
 
-```python tags=["figure-topicsmap78PNG-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsmap78PNG-*"]
 # Fallback to PNG in case the HTML fails to display
 Image('./figs/topics_map_V78.png')
 ```
@@ -1228,7 +1229,7 @@ fig_48.write_html('./figs/topics_dynamic_V48.html')
 fig_48.write_image('./figs/topics_dynamic_V48.png')
 ```
 
-```python tags=["figure-topicsdyn78HTML-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsdyn78HTML-*"]
 import numpy as np
 import plotly.graph_objects as go
 
@@ -1283,7 +1284,7 @@ fig_78.write_image('./figs/topics_dynamic_V78.png')
 fig_78.show()
 ```
 
-```python tags=["figure-topicsdyn78PNG-*"]
+```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsdyn78PNG-*"]
 # Fallback to PNG in case HTML fails to display
 display(Image('./figs/topics_dynamic_V78.png'))
 ```
@@ -1617,7 +1618,7 @@ A video from the online media Blast, devoted to Madani Marzuk—who has stood al
 
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["video-blast-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["video-blast-*"]
 # Load video from YT
 from IPython.display import YouTubeVideo
 # Extract video ID from URL
@@ -1626,7 +1627,7 @@ from IPython.display import YouTubeVideo
 YouTubeVideo('SQmOpyL7PMA', start=954)
 ```
 
-```python editable=true slideshow={"slide_type": ""} tags=["table-blast-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["table-blast-*"]
 chunk_df[chunk_df.id=='SQmOpyL7PMA'].reset_index().iloc[39:41]["chunk"].rename('Tarek Kawtari')
 ```
 
@@ -1723,7 +1724,7 @@ More broadly, the study clarifies both the prospects and risks of AI in historic
 ## Bibliography
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 <!-- BIBLIOGRAPHY START -->
 <div class="csl-bib-body">
   <div class="csl-entry"><i id="zotero|10163145/UXQWLN6C"></i>Bain, Max, Jaesung Huh, Tengda Han, and Andrew Zisserman. 2023. “WhisperX: Time-Accurate Speech Transcription of Long-Form Audio.” arXiv. <a href="https://doi.org/10.48550/arXiv.2303.00747">https://doi.org/10.48550/arXiv.2303.00747</a>.</div>
