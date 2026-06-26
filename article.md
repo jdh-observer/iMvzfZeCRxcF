@@ -728,7 +728,7 @@ pd.DataFrame(results).to_csv('./script/data/evaluation.csv')
 The next figure illustrates how evaluation guides our choice of the "optimal" value for $K$ : the intersection between lines representing Coherence and Diversity (after min-max normalization) represent the best compromise between coherence and diversity.
 <!-- #endregion -->
 
-```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-evaluation-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["Model evaluation and selection of K"]}} slideshow={"slide_type": ""} tags=["figure-evaluation-*"]
 import numpy as np
 import pandas as pd
 
@@ -1025,7 +1025,7 @@ model_78.update_topics(
 The barcharts below describe the top 10 words for each topic, ranked by C-TF-IDF (specificity) score.
 <!-- #endregion -->
 
-```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["Salient words per topic  78 docs per cluster / 19 topics"]}} slideshow={"slide_type": ""} tags=["figure-topicbarchart78HTML-*"]
 p2=78
 barchart_78 = model_78.visualize_barchart(title=f'Salient words per topic <br>'+
                                             f'<span style="font-size: 12pt;">V78 / {len(model_78.get_topics().keys())} topics </span>',
@@ -1037,11 +1037,6 @@ barchart_78.update_layout(margin_t=150)
 barchart_78.write_html(f'./figs/topics_barchart_V{p2}.html', include_plotlyjs="cdn")
 barchart_78.write_image(f'./figs/topics_barchart_V{p2}.png')
 barchart_78.show()
-```
-
-```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicbarchart78PNG-*"]
-# Fallback to the png version in case HTML fails to display
-display(Image('./figs/topics_barchart_V78.png'))
 ```
 
 <!-- #region tags=["hermeneutics"] -->
@@ -1068,11 +1063,6 @@ barchart_48.update_layout(margin_t=150)
 barchart_48.write_html(f'./figs/topics_barchart_V{p2}.html', include_plotlyjs="cdn")
 barchart_48.write_image(f'./figs/topics_barchart_V{p2}.png', include_plotlyjs="cdn")
 barchart_48.show()
-```
-
-```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicbarchart48PNG-*"]
-# Fallback to the png version in case HTML fails to display
-display(Image('./figs/topics_barchart_V48.png'))
 ```
 
 ### 2.3.2 Cluster map
@@ -1729,7 +1719,7 @@ More broadly, the study clarifies both the prospects and risks of AI in historic
 
 <!-- #endregion -->
 
-<!-- #region editable=true slideshow={"slide_type": ""} -->
+<!-- #region editable=true slideshow={"slide_type": ""} tags=["hidden"] -->
 ## Bibliography
 <!-- #endregion -->
 
