@@ -284,12 +284,12 @@ WhisperX is a system relying on a deep learning model trained on very large cult
 Table below displays an example of ASR transcript, and the actual video excerpt (transcribed passage starts at `00:00:32`). When compared to the [manually corrected transcript](https://fresques.ina.fr/sudorama/fiche-media/00000000269/l-arrivee-de-la-marche-pour-l-egalite-et-contre-le-racisme-a-paris.html#infos){:target="_blank"} (which can be displayed by clicking on "Synchroniser le texte" in the player controls), we can see WhisperX/Pyannote exhibits under-segmentation, that is, speech turns from different speakers are attributed to the same speaker. These errors are overlapping speech, but also seem to increase as a function of the material's age, perhaps due to sound quality. Because of these limitations, and the fact that Pyannote's speech segments are often larger than the language model's context size, we willdiscard diarization entirely for the rest of the pipeline.
 <!-- #endregion -->
 
-```python editable=true slideshow={"slide_type": ""} tags=["sound-whisperexample-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["sound-whisperexample-*"]
 from IPython.display import Audio
 Audio('media/RAC8300168201.mp3')
 ```
 
-<!-- #region tags=["dialog-whisperexample2-*"] -->
+<!-- #region jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["dialog-whisperexample2-*"] -->
 | KMRAC-MA83000171.01_SPEAKER_10 | KMRAC-MA83000171.01_SPEAKER_11 |
 | ------ | ------ |
 | &nbsp; |  C'est quoi ça ? |
@@ -1137,7 +1137,7 @@ map78_light.show()
 
 ```python jdh={"module": "object", "object": {"source": ["Cluster map V78 / 19 topics"]}} tags=["figure-topicsmap78PNG-*"]
 # Fallback to PNG in case the HTML fails to display
-Image('./figs/topics_map_V78.png')
+display(Image('./figs/topics_map_V78.png'))
 ```
 
 To reduce the visualization footprint and facilitate model comparison, the code below generates a single interactive figure, where the user can switch between the two models.
