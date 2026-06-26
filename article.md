@@ -225,7 +225,7 @@ HTML(excerpt_df[['thumbnail_public_url','corpus','id','publication_date','title'
 )
 ```
 
-```python editable=true slideshow={"slide_type": ""} 
+```python editable=true slideshow={"slide_type": ""}
 import plotly.express as px
 
 gp = doc_df.groupby([doc_df.publication_date.dt.year, 'corpus'])
