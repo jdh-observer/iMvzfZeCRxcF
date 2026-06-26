@@ -6,7 +6,7 @@ jupyter:
       extension: .md
       format_name: markdown
       format_version: '1.3'
-      jupytext_version: 1.19.1
+      jupytext_version: 1.19.4
   kernelspec:
     display_name: Python 3 (ipykernel)
     language: python
@@ -225,7 +225,7 @@ HTML(excerpt_df[['thumbnail_public_url','corpus','id','publication_date','title'
 )
 ```
 
-```python editable=true jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} slideshow={"slide_type": ""} tags=["figure-corpusbarplot-*"]
+```python editable=true jdh={"module": "object", "object": {"source": ["Total duration of archives"]}} slideshow={"slide_type": ""} tags=["figure-corpusbarplot-*"]
 import plotly.express as px
 
 gp = doc_df.groupby([doc_df.publication_date.dt.year, 'corpus'])
@@ -251,6 +251,10 @@ fig.update_layout (yaxis_title = 'Total duration of archives',  plot_bgcolor='#F
 # HTML(html)
 fig.write_html('./figs/corpus_barplot.html')
 fig.show()
+```
+
+```python jdh={"module": "object", "object": {"source": ["Total duration of archives"]}} tags=["figure-corpusbarplot-*"]
+display(Image("./figs/corpus_barplot.png"))
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
@@ -1141,7 +1145,7 @@ map78_light = model_78.visualize_documents(title=title, docs=docs_tooltip, topic
 map78_light.show()
 ```
 
-```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsmap78PNG-*"]
+```python jdh={"module": "object", "object": {"source": ["Cluster map V78 / 19 topics"]}} tags=["figure-topicsmap78PNG-*"]
 # Fallback to PNG in case the HTML fails to display
 Image('./figs/topics_map_V78.png')
 ```
@@ -1174,60 +1178,6 @@ Finally, we examine the evolution of the topic's underlying themes over time. Fo
 
 
 Once again, we slightly modify a native BERTopic visualization function, `topics_per_class`, and define classes as yearly bins in our data. 
-
-```python editable=true slideshow={"slide_type": ""}
-import numpy as np
-import plotly.graph_objects as go
-
-# Plot the topics for V48
-topics_per_class = topics_per_class_48
-
-title=("Topic proportion per year<br>"
-+ f'<span style="font-size: 12pt;">(Percentage of documents assigned to topic T for year Y)</span><br>'
-+ f'<span style="font-size: 12pt;">V48 / {len(model_48.get_topics().keys())} topics </span>')
-fig_48 = model_48.visualize_topics_per_class(topics_per_class.sort_values('Class'), title=title, topics=range(-1, len(model_48.get_topics())-1), top_n_topics=35)
-
-# Get the categories (y-axis for horizontal bars) -- these are the known x-ticks
-categories = fig_48.data[0].y
-
-# Initialize a dictionary to store x values for each trace, with 0 for missing x-ticks
-trace_values = {}
-
-# Iterate through each trace and align x values with known categories
-for trace in fig_48.data:
-    if isinstance(trace, go.Bar):
-        # Create a dictionary of categories with 0 values for each trace
-        trace_dict = dict(zip(trace.y, trace.x))  # Map categories to x-values
-        # For categories that are not in the trace, set the value to 0
-        aligned_values = [trace_dict.get(cat, 0) for cat in categories]
-        trace_values[trace.name] = aligned_values
-
-# Convert trace values to a numpy array for normalization
-value_matrix = np.array(list(trace_values.values()))
-
-# Sum across traces for each category (column-wise sum)
-totals = value_matrix.sum(axis=0)
-
-# Normalize each trace's values so they sum to 100 for each x-tick
-for i, (trace, trace_name) in enumerate(zip(fig_48.data, trace_values.keys())):
-    if isinstance(trace, go.Bar):
-        # Normalize the trace values
-        trace.x, trace.y = categories, (value_matrix[i] / totals) * 100
-        trace.orientation = 'v'  # Set orientation to vertical
-
-# Update layout to stack the bars                  
-fig_48.update_layout(dict(yaxis=dict(automargin=True)))
-fig_48.update_xaxes(dtick='Y1', tickangle=45)
-
-# Add generous right margin for hoverlabels
-fig_48.update_layout(
-    margin=dict(t=120, l=80, r=320, b=60),  # r increased significantly
-    xaxis_title="Year",
-    yaxis_title="Topic proportion",
-)
-fig_48.write_html('./figs/topics_dynamic_V48.html')
-fig_48.write_image('./figs/topics_dynamic_V48.png')
-```
 
 ```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsdyn78HTML-*"]
 import numpy as np
@@ -1284,9 +1234,68 @@ fig_78.write_image('./figs/topics_dynamic_V78.png')
 fig_78.show()
 ```
 
-```python jdh={"module": "object", "object": {"source": ["LABEL TO ADD"]}} tags=["figure-topicsdyn78PNG-*"]
+```python
 # Fallback to PNG in case HTML fails to display
 display(Image('./figs/topics_dynamic_V78.png'))
+```
+
+```python editable=true jdh={"module": "object", "object": {"source": ["Topic proportion per year"]}} slideshow={"slide_type": ""} tags=["figure-topicsdyn78PNG-*"]
+import numpy as np
+import plotly.graph_objects as go
+
+# Plot the topics for V48
+topics_per_class = topics_per_class_48
+
+title=("Topic proportion per year<br>"
++ f'<span style="font-size: 12pt;">(Percentage of documents assigned to topic T for year Y)</span><br>'
++ f'<span style="font-size: 12pt;">V48 / {len(model_48.get_topics().keys())} topics </span>')
+fig_48 = model_48.visualize_topics_per_class(topics_per_class.sort_values('Class'), title=title, topics=range(-1, len(model_48.get_topics())-1), top_n_topics=35)
+
+# Get the categories (y-axis for horizontal bars) -- these are the known x-ticks
+categories = fig_48.data[0].y
+
+# Initialize a dictionary to store x values for each trace, with 0 for missing x-ticks
+trace_values = {}
+
+# Iterate through each trace and align x values with known categories
+for trace in fig_48.data:
+    if isinstance(trace, go.Bar):
+        # Create a dictionary of categories with 0 values for each trace
+        trace_dict = dict(zip(trace.y, trace.x))  # Map categories to x-values
+        # For categories that are not in the trace, set the value to 0
+        aligned_values = [trace_dict.get(cat, 0) for cat in categories]
+        trace_values[trace.name] = aligned_values
+
+# Convert trace values to a numpy array for normalization
+value_matrix = np.array(list(trace_values.values()))
+
+# Sum across traces for each category (column-wise sum)
+totals = value_matrix.sum(axis=0)
+
+# Normalize each trace's values so they sum to 100 for each x-tick
+for i, (trace, trace_name) in enumerate(zip(fig_48.data, trace_values.keys())):
+    if isinstance(trace, go.Bar):
+        # Normalize the trace values
+        trace.x, trace.y = categories, (value_matrix[i] / totals) * 100
+        trace.orientation = 'v'  # Set orientation to vertical
+
+# Update layout to stack the bars                  
+fig_48.update_layout(dict(yaxis=dict(automargin=True)))
+fig_48.update_xaxes(dtick='Y1', tickangle=45)
+
+# Add generous right margin for hoverlabels
+fig_48.update_layout(
+    margin=dict(t=120, l=80, r=320, b=60),  # r increased significantly
+    xaxis_title="Year",
+    yaxis_title="Topic proportion",
+)
+fig_48.write_html('./figs/topics_dynamic_V48.html')
+fig_48.write_image('./figs/topics_dynamic_V48.png')
+```
+
+```python jdh={"module": "object", "object": {"source": ["Topic proportion per year"]}} tags=["figure-topicsdyn48PNG-*"]
+# Fallback to PNG in case HTML fails to display
+display(Image('./figs/topics_dynamic_V48.png'))
 ```
 
 <!-- #region editable=true slideshow={"slide_type": ""} -->
